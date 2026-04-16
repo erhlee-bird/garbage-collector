@@ -114,7 +114,7 @@ export function prepRobortender(): void {
     }
     useFamiliar($familiar`Robortender`);
     const drink = toItem(drinkName);
-    if (retrievePrice(drink) > priceCap) {
+    if (!have(drink) && retrievePrice(drink) > priceCap) {
       if (mandatory) {
         setBestLeprechaunAsMeatFamiliar();
         if (
